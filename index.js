@@ -96,9 +96,7 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array) {
-  while (array.length > 31) {
-    array.pop();
-  }
+  array.pop();
   return array;
 }
 
@@ -162,10 +160,17 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(array, string) {
+function filterByWord(array, flavor) {
+  let filteredArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(flavor)) {
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
+
   /*your code here*/
 }
-
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
